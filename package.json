@@ -1,0 +1,22 @@
+{
+  "name": "postcss",
+  "version": "1.0.0",
+  "description": "proyectcss-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christiano0407/Post-Css.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "Chris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Christiano0407/Post-Css/issues"
+  },
+  "homepage": "https://github.com/Christiano0407/Post-Css#readme"
+}
