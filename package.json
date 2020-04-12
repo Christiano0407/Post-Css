@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Christiano0407/Post-Css/issues"
   },
-  "homepage": "https://github.com/Christiano0407/Post-Css#readme"
+  "homepage": "https://github.com/Christiano0407/Post-Css#readme",
+  "dependencies": {
+    "postcss-cli": "^7.1.0"
+  }
 }
