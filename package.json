@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Christiano0407/Post-Css#readme",
   "dependencies": {
+    "autoprefixer": "^9.7.6",
     "postcss-cli": "^7.1.0"
   }
 }
