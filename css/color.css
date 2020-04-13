@@ -77,8 +77,161 @@ body {
         } */
     }
     @media (max-width:767px){
-        
+       .home {
+           height: auto;
+           -ms-grid-columns: 1fr;
+           grid-template-columns: 1fr;
+           -ms-grid-rows: auto auto 150px;
+           grid-template-rows: auto auto 150px;
+           grid-template-areas: "primary"
+                                "sidebar"
+                                "featuring";
+       } 
+    }
+    .home-sidebar{
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        -ms-grid-columns: 1;
+        grid-area: sidebar;
+    }
+    .home-primary{
+        -ms-grid-row: 2;
+        -ms-grid-columns: 2;
+        grid-area: primary;
+    }
+    .home-featuring{
+        -ms-grid-row:2;
+        -ms-grid-columns:2;
+        grid-area: featuring;
     }
 
+  /*   sidebar */
+  .sidebar {
+        /*background: color(hsla(125, 50%, 50%, .4) saturation(+ 10%) w(- 20%));*/
+        display: grid;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: auto 1fr 1fr;
+        grid-template-rows: auto 1fr 1fr;
+        color: #fff;
+         /*color: color([color | matiz], ajuste de color);*/
+  color: rgba(186, 186, 186, 0.5);
+  /*background: hwb(hue, whiteness, blackness, opacidad);*/
+  /*background: hwb(tono | matiz, luz, sombra, opacidad);*/
+  background: rgb(20, 25, 46);
+  /*background: hsl(260, 65%, 52%);*/
+  /*background: gray(0 - 255);*/
+  /*background: gray(204);*/
+        padding: 1em;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        height: 100vh;
+        overflow: auto;
+  }
+  @media (max-width: 767px){
+      .sidebar{
+          height: auto;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto 1fr;
+          -ms-grid-columns: 1fr 1fr;
+          -ms-template-rows: auto 1fr;
+      }
+  }
+  /* logo */
+.logo {
+    width: calc(100% - 100px);
+    margin: 0 auto;
+    background-image: url(../images/platzi-video.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 40px;
+}
+@media (max-width: 767px){
+    .logo{
+        grid-column: 1 / -1;
+        width: 200px;
+    }
+}
+
+.logo-image {
+    margin: 0;
+}
+.logo-image img {
+    max-width: 100%;
+}
+.sidebarPlayList{
+    overflow: auto;
+}
+
+/* myPlaylist */
+.myPlaylist{
+    padding: 0 20px;
+}
+.myPlaylist:link:hover,
+.myPlaylist:visited:hover{
+    color: rgba(230, 204, 179);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+.myPlaylist-item:last-child,
+.myPlaylist-item:nth-of-type(3),
+.myPlaylist-item:first-child{
+    background: rgb(255, 102, 102);
+}
+.myPlaylist-item:not(:last-child):not(:nth-of-type(3)):not(:first-child){
+    background: rgb(153, 153, 255);
+}
+.myPlaylist-item a{
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    display: block;
+    margin-bottom: 7px;
+}
+.myPlaylist-item:last-child a{
+    margin-bottom: 0;
+}
+.myPlaylist-item a:hover{
+    text-decoration: underline;
+}
+.myPlaylist .myPlaylist-item{
+    border: 5px solid  rgb(255, 102, 102);
+}
+
+/* playlistfriend */
+.playlistfriends{
+    padding: 0;
+}
+.playlistfriends-item{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 7px;
+    font-size: .8em;
+}
+.playlistfriends-item a{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+.playlistfriends-item:hover a{
+    text-decoration: underline;
+}
+.playlistfriends-item img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.playlistfriends-item span{
+    display: inline-block;
+}
 
     
