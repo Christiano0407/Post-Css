@@ -233,5 +233,27 @@ body {
 .playlistfriends-item span{
     display: inline-block;
 }
+.home-primary{
+    background: white;
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas: "search user"
+                         "list list";
+   -ms-grid-rows: auto 1fr;
+   grid-template-rows: auto 1fr;
+   -ms-grid-columns: 300px 1fr;
+   grid-template-columns: 300px 1fr;
+   padding: 10px;
+   overflow: auto;                      
+}
+
+.user img {
+    width: 45px;
+    height: 45px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
     
