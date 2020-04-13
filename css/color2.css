@@ -1,33 +1,340 @@
-body {
+@font-face {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Lato Light"),local(Lato-Light),url(//fonts.gstatic.com/s/lato/v14/zLhfkPOm_5ykmdm-wXaiuw.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v14/EsvMC5un3kjyUhB9ZEPPwg.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v14/KT3KS9Aol4WfR6Vas8kNcg.woff) format("woff");
+  }
+
+  @font-face {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Lato Regular"),local(Lato-Regular),url(//fonts.gstatic.com/s/lato/v14/nQhiC-wSiJx0pvEuJl8d8A.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v14/1YwB1sO8YE1Lyjf12WNiUA.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v14/9k-RPmcnxYEPm8CNFsH2gg.woff) format("woff");
+  }
+
+  body {
     margin: 0;
-    font-family: 'Lato', system-ui;
+    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
   }
-    
-.btn {
-    @apply --button;
+  body {
+    margin: 0;
+    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
   }
-  
+  .featuring {
+    background: -webkit-gradient(linear, left top, right top, from(#ff0000), to(#ff458b));
+    background: linear-gradient(to right, #ff0000, #ff458b);
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-left: 100px;
+    color: white;
+  }
+  .featuring-image {
+    margin-right: 20px;
+  }
+  .featuring-title {
+    margin: 10px;
+  }
+  .featuring-album {
+    font-size: 1.3em;
+    margin: 10px;
+  }
+  /*home layout*/
+  .home {
+    background: var(--lightColor);
+    display: -ms-grid;
+    display: grid;
+    /*height: calc(var(--viewportHeight) * 2);*/
+    height: calc(50vh * 2);
+    -ms-grid-columns: 350px 1fr;
+        grid-template-columns: 350px 1fr;
+    -ms-grid-rows: 1fr 150px;
+        grid-template-rows: 1fr 150px;
+        grid-template-areas: "sidebar primary"
+                         "sidebar featuring";
+    /*background: green;*/
+  }
+  .home-sidebar {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: sidebar;
+  }
+  .home-primary {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: primary;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "search user"
+                         "list list";
+    -ms-grid-rows: auto 1fr;
+        grid-template-rows: auto 1fr;
+    -ms-grid-columns: 300px 1fr;
+        grid-template-columns: 300px 1fr;
+    padding: 10px;
+    overflow: auto;
+  }
+  .home-featuring {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: featuring;
+  }
+  /*Sidebar*/
+  .sidebar {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto 1fr 1fr;
+        grid-template-rows: auto 1fr 1fr;
+    background: var(--darkColor);
+    color: white;
+    padding: 1em;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100vh;
+    overflow: auto;
+    /*background: color(black alpha(50%) contrast(50%));*/
+    /*background: hwb(hue, whiteness, blackness)*/
+    /*background: hwb(0 - 360, 0 - 100%, 0 100%, opacidad)*/
+    background: rgb(20, 25, 46);
+    /*background: gray(0 - 255);*/
+    /*background: gray(204);*/
+  }
+  /*Logo*/
+  .logo {
+    width: calc(100% - 100px);
+    margin: 0 auto;
+    /*background-image: image-set(url de la imagen densidad, url de la imagen densidad);*/
+    background-image: url('../images/platzi-video.png');
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .logo-image {
+    margin: 0;
+  }
+  .logo-image img {
+    max-width: 100%;
+  }
+  .btn {
+    border: 1px solid var(--lightColor);
+    border-radius: 5px;
+    background: var(--darckColor);
+    color: var(--lightColor);
+    padding: .5em 2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 5px solid var(--lightColor);
+  }
   .btn.warning {
     background: var(--warningColor);
   }
   .checkbox:checked + .primaryPlaylist-list {
     display: none;
   }
-  
-  :--checkeable {
+  .checkbox-label,
+  .radio-label {
     cursor: pointer;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     padding: 3px 7px;
-    border: 1px solid color(red b(10%));
+    border: 1px solid rgb(230, 0, 0);
     border-bottom: 3px solid red;
-    color: gray(100);
+    color: rgb(100, 100, 100);
     font-size: 12px;
     border-radius: 5px;
     margin-bottom: 10px;
     display: inline-block;
   }
-  
-  :--checkeable:--hightlight {
+  .checkbox-label:hover,
+  .radio-label:hover,
+  .checkbox-label:active,
+  .radio-label:active {
     background: red;
     color: white;
   }
+  /*myPlaylist*/
+  .myPlaylist {
+    padding: 0 20px;
+  }
+  .myPlaylist :link:hover,.myPlaylist :visited:hover {
+    color: rgb(230, 204, 179);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .myPlaylist-item a {
+    color: white;
+    text-decoration: none;
+    font-size: .8em;
+    display: block;
+    margin-bottom: 7px;
+  }
+  .myPlaylist-item a:hover {
+    text-decoration: underline;
+  }
+  .myPlaylist-item:last-child a {
+    margin-bottom: 0;
+  }
+  .myPlaylist .myPlaylist-item {
+    border: 5px dashed pink;
+  }
+  /*.myPlaylist .myPlaylist-item {
+  }
+  */
+  .myPlaylist-item:last-child, .myPlaylist-item:nth-of-type(3), .myPlaylist-item:first-child {
+    background: rgb(255, 102, 102);
+  }
+  .myPlaylist-item:not(:last-child):not(:nth-of-type(3)) {
+    background: rgb(153, 153, 255);
+  }
+  /*playlistFriends*/
+  .playlistFriends {
+    padding: 0;
+  }
+  .playlistFriends-item {
+    color: white;
+  }
+  .playlistFriends-item {
+    display: flex;
+    margin-bottom: 7px;
+    font-size: .8em;
+  }
+  .playlistFriends-item a {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+  }
+  .playlistFriends-item:hover a {
+    text-decoration: underline;
+  }
+  .playlistFriends-item img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .playlistFriends-item span {
+    display: inline-block;
+  }
+  .user p {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    margin: 0;
+  }
+  .user img {
+    width: 45px;
+    height: 45px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .search {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: search;
+  }
+  .search input {
+    background: #f0f0f0;
+    font-family: "Lato";
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    -webkit-box-shadow: 0 0 10px #f0f0f0;
+            box-shadow: 0 0 10px #f0f0f0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;;
+  }
+  .primary-user {
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  .primary-list {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: list;
+    overflow: auto;
+  }
+  .primaryPlaylist-topic {
+    margin: 15px 0 0;
+    color: #888B8E;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .primaryPlaylist-title {
+    margin: 0 0 15px;
+    color: #3F546C;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .primaryPlaylist-list {
+    display: flex;
+    overflow: auto;
+  }
+  .primaryPlaylist-list .primaryPlaylistItem {
+    margin-right: 10px;
+  }
+  .primaryPlaylistItem img {
+    width: 250px;
+    height: 180px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .primaryPlaylistItem-title {
+    margin: 5px 0;
+    color: #44546B;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  :root {
+    --darkColor: #15192a;
+    --lightColor: white;
+    --warningColor: red;
+    --viewportHeight: 50vh;
+  }
+  /*@custom-media --small screen and (max-width: 768px);*/
+  /*@custom-selector :--nombreDelSelector .elemento > .hijo, .elemento2 > .hijo;*/
+  .sidebarPlaylist {
+    overflow: auto;
+  }
+  @media screen and (max-width: 767px) {
+    .featuring {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+    }
+    .home {
+      height: auto;
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr;
+      -ms-grid-rows: auto auto 150px;
+          grid-template-rows: auto auto 150px;
+          grid-template-areas: "primary"
+                           "sidebar"
+                           "featuring";
+    }
+  }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    background-image: url('../images/platzi-video.png');
+  }
+  }
+  @media (-webkit-min-device-pixel-ratio: 3.125), (min-resolution: 300dpi) {
+  .logo {
+    background-image: url('../images/platzi-video.png');
+  }
+  }
+  
