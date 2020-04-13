@@ -1,0 +1,84 @@
+/*@import "./body.css";*/
+body {
+    margin: 0;
+ /*    Tasman Regular */
+    font-family: tasman, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+  /*   Tasman Bold */
+  /*   font-family: tasman, sans-serif;
+    font-weight: 700;
+    font-style: normal; */
+}
+/*.checkbox-label {*/
+    .checkbox-label,
+    .radio-label {
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      cursor: pointer;
+      padding: 3px 7px;
+      border: 1px solid rgb(230, 4, 0);
+      border-bottom: 3px solid rgb(128, 2, 0);
+      background: rgb(255, 205, 204);
+      color: rgb(100, 100, 100);
+      font-size: 12px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    /* .checkbox-label:hover, .checkbox-label:active */
+    .checkbox-label:hover,
+    .radio-label:hover,
+    .checkbox-label:active,
+    .radio-label:active {
+        background: red;
+        color: white;
+    }
+    /*.checkbox:checked + .primaryPlaylist-list {*/
+        .checkbox:checked + .primaryPlaylist-list {
+            display: none;
+        }
+        .btn {
+            border: 1px solid white;
+            border-radius: 5px;
+            background: #171b2f;
+            color: white;
+            padding: .5em 2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-bottom: 5px solid white;
+        }
+        .btn.warning {
+            background: red;
+        }
+        /* home layout */
+        .home{
+            background: rgb(26, 25, 25);
+            display: -ms-grid;
+            display: grid;
+        height: 100vh;
+        -ms-grid-column: 350px 1fr;
+        grid-template-columns: 350px 1fr;
+        -ms-grid-row: 1fr 150px;
+        grid-template-rows: 1fr 150px;
+        grid-template-areas: "sidebar primary"
+                             "sidebar feauturing";
+      /*   &-sidebar{
+            grid-area:sidebar;
+        }
+        &-primary{
+            grid-area: primary;
+        }
+        &-featuring{
+            grid-area: featuring;
+        } */
+    }
+    @media (max-width:767px){
+        
+    }
+
+
+    
