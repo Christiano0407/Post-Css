@@ -1,0 +1,30 @@
+@media screen and (max-width: 767px) {
+    .featuring {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+    }
+    .home {
+      height: auto;
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr;
+      -ms-grid-rows: auto auto 150px;
+          grid-template-rows: auto auto 150px;
+          grid-template-areas: "primary"
+                           "sidebar"
+                           "featuring";
+    }
+  }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    background-image: url('../images/platzi-video.png');
+  }
+  }
+  @media (-webkit-min-device-pixel-ratio: 3.125), (min-resolution: 300dpi) {
+  .logo {
+    background-image: url('../images/platzi-video.png');
+  }
+  }
+  
